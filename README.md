@@ -27,6 +27,7 @@
 ##Details of implementation
 
 [Back to Table of Contents] (README.md#table-of-contents)
+- Dependencies: python 2.7, anaconda 1.18.2 (2015), (dependencies not included in the submitted version: spark 1.6.0 on hadoop 2.6)
 
 - Usage: sh run.sh (the code calls unit test first, then cleans the output from unit test, and at last call the main run for big inputs)
 
