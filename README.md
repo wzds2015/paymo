@@ -50,4 +50,4 @@
 
 - The input now is read line by line from the text file. In real application, a streaming technique is neccessary, we can consider kafka as a good framework for streaming. 
 
-- Now the initial graphs are store in python dictionaries which are not scalable. In real application, a good distributed databased supporting fast query and transactions (read, write) is of great importance.    
+- Now the initial graphs are store in python dictionaries which are not scalable. In real application, a good distributed database supporting fast query and transactions (read, write) is of great importance.    
