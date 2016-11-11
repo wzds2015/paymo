@@ -54,7 +54,7 @@ a big trade-off and considering real application, I decided to use second order 
 ##Future Works
 [Back to Table of Contents] (README.md#table-of-contents)
 
-- The current code only implements multithreading on a single machine, to further increase scalability and fault tolerance, we can consider distributed frameworks. I have tested some version of code on spark which didn't perform veru well (using dataframe to store the edges which is easy for the processes like finding second order and 4th order connections -- just a couple of joins). The reason may be spark is not designed for transactions updating and querying.
+- We tested multithreading on a single machine (not included in the final version), to further increase scalability and fault tolerance, we can consider distributed frameworks. I have tested some version of code on spark which didn't perform veru well (using dataframe to store the edges which is easy for the processes like finding second order and 4th order connections -- just a couple of joins). The reason may be spark is not designed for transactions updating and querying.
 
 - The input now is read line by line from the text file. In real application, a streaming technique is neccessary, we can consider kafka as a good framework for streaming. 
 
