@@ -24,6 +24,14 @@
 1) Degree 3: in this case, there must be one user3, who is degree 1 connection of user1, and also degree 2 connection of user2. We just need to get neighbor list of user1 in degree1 graph, neighbor list of user2 in degree2 graph, and see if these two lists have intersection.  
 2) Degree 4: in this case, there must be one user3, who is degree 2 connection of user1 as well as user2. We just need to get neighbor lists of user1 and user2 in degree2 graph, and see if these two lists have intersection.  
 
+- Scalability: If we cache only first order connection, the batch building step takes O(n*k) in average, assuming n users and avergely k connections per
+user. And in checking step, feature1 takes O(1), feature2 takes $O(k^2)$, feature3 takes $O(k^4)$ for each user. If we cache second order connection
+ also, feature1 takes $O(1)$, feature2 takes $O(1)$, feature3 takes $O(k^2)$. But if we need to update the cached graphs with new transaction, only cache 
+first order takes $O(k)$, cache also second order takes $O(k^2)$. We can conclude, by caching second order connection, real time alerting has lower 
+latency, but graph updating will take longer. In real application we actually care more about the latency of alerting. For transaction updating, we 
+can tolerate some delay. And the speed gain from caching second order in alerting is much larger than the speed loss in transaction updating. This is 
+a big trade-off and considering real application, I decided to use second order connection caching.  
+
 ##Details of implementation
 
 [Back to Table of Contents] (README.md#table-of-contents)
